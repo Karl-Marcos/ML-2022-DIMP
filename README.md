@@ -59,8 +59,8 @@ Antes de testar os modelos e decidir qual o melhor para o nosso dataset, separam
 
 Podemos comparar os resultados dos diferentes modelos  observando os gráficos abaixo:
 
-![image](https://github.com/Karl-Marcos/ML-2022-DIMP/blob/main/imagens/multiplot_Energia de Fermi.png)
+![image](https://github.com/Karl-Marcos/ML-2022-DIMP/blob/main/imagens/multiplot_Energia%20de%20Fermi.png)
 
-![image](https://github.com/Karl-Marcos/ML-2022-DIMP/blob/main/imagens/multiplot_Energia por Átomo.png)
+![image](https://github.com/Karl-Marcos/ML-2022-DIMP/blob/main/imagens/multiplot_Energia%20por%20Átomo.png)
 
 Vemos que, para ambos os atributos, o melhor modelo foi o de floresta aleatória, que resultou nos menores valores de RMSE.
