@@ -56,3 +56,11 @@ Vamos calcular métricas de Machine Learnig, testaremos modelos:
 - `Floresta aleatória`
 
 Antes de testar os modelos e decidir qual o melhor para o nosso dataset, separamos os dados em dois grupos diferentes: `teste` e `treino`. Os dados de teste são usados somente na hora de testar os modelos, para não haver possibilidade do algoritimo ter decorado os dados e devolvido somente um valor que já era conhecido. Para melhorarmos os nossos modelos, nós também modificamos os hiperparâmetros para podermos ter melhores resultados das relações. Por fim, o melhor modelo foi o de `Árvore aleatória`, tanto para Energia de Fermi quanto para Energia por átomo. 
+
+Podemos comparar os resultados dos diferentes modelos  observando os gráficos abaixo:
+
+![image](https://github.com/Karl-Marcos/ML-2022-DIMP/blob/main/imagens/multiplot_Energia de Fermi.png)
+
+![image](https://github.com/Karl-Marcos/ML-2022-DIMP/blob/main/imagens/multiplot_Energia por Átomo.png)
+
+Vemos que, para ambos os atributos, o melhor modelo foi o de floresta aleatória, que resultou nos menores valores de RMSE.
