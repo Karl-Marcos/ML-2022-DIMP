@@ -38,7 +38,7 @@ Também calculamos a correção das *features* para a energia por átomo
 Atributos para calcular a energia por átomo:
 ![image](https://github.com/Karl-Marcos/ML-2022-DIMP/blob/main/imagens/atributos_energia_por_atomo.png)
 
-Para o **Aprendizado supervisionado** uitlizamos as seguintes bibliotecas: 
+Para o **Aprendizado supervisionado** utilizamos as seguintes bibliotecas: 
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -64,3 +64,19 @@ Podemos comparar os resultados dos diferentes modelos  observando os gráficos a
 ![image](https://github.com/Karl-Marcos/ML-2022-DIMP/blob/main/imagens/multiplot_Energia%20por%20Átomo.png)
 
 Vemos que, para ambos os atributos, o melhor modelo foi o de floresta aleatória, que resultou nos menores valores de RMSE.
+
+Para o **Aprendizado não supervisionado** utilizamos as seguintes bibliotecas: 
+
+```python 
+import seaborn as sns
+import pandas as pd
+from sklearn.model_selection import train_test_split
+import numpy as np
+import seaborn as sns
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+import matplotlib.pyplot as plt
+from mpl_toolkits import mplot3d
+```
+Vamos primeiramente reduzir a dimensionalidade da nossa matriz, para poder aplicar o PCA (Análise do componente principal), assim feito, escolhemos as 10 primeiras `features` para treinar o nosso modelo supervisionado.
