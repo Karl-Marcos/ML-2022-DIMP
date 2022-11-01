@@ -79,4 +79,5 @@ from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
 from mpl_toolkits import mplot3d
 ```
-Vamos primeiramente reduzir a dimensionalidade da nossa matriz, para poder aplicar o PCA (Análise do componente principal), assim feito, escolhemos as 10 primeiras `features` para treinar o nosso modelo supervisionado.
+Vamos primeiramente reduzir a dimensionalidade da nossa matriz, para poder aplicar o PCA (Análise do componente principal), assim feito, escolhemos as 10 primeiras `features` para treinar o nosso modelo supervisionado. Por último, temos que, para os nossos dados, o melhor algoritimo para a detecção de outliers foi o `LOF`.
+
