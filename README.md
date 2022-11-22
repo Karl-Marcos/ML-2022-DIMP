@@ -1,15 +1,11 @@
 # ML-2022-DIMP
-Trabalho Aprendizado de Máquina
+Trabalho Aprendizado de Máquina.
 
-Esse repositório apresenta ferramentas uteis para o compreendimento de dados a respeito de *flakes* de oxido de grafeno. Grafeno é uma estrutura composta apenas por carbono, é uma monocamada de grafite. Seu oxido, portanto, é essa mesma estrutura, porém com defeitos de oxigênio e hidrogênio.
+Esse repositório apresenta ferramentas úteis para o compreendimento de dados a respeito de *flakes* de óxido de grafeno. Grafeno é uma estrutura composta apenas por carbono, é uma monocamada de grafite. Seu óxido, portanto, é essa mesma estrutura, porém com defeitos de oxigênio e hidrogênio.
 
 Utilizamos as seguintes bibliotecas para a **obtenção e análise de dados**
 ```python
-import pandas as pd
-import lmfit 
-import matplotlib.pyplot as plt
-import seaborn as sns
-import numpy as np
+pandas, lmfit, matplotlib.pyplot, seaborn, numpy 
 ```
 
 Aqui estão algumas estruturas para exemplificar:
@@ -23,7 +19,7 @@ Os dados que usamos são de flakes de óxido de grafeno relaxadas, o que signifi
 Decidimos estudar, como targets numéricos, os valores de energia de Fermi, e de energia total por átomo. Podemos ver no histograma abaixo que a energia de Fermi está distribuída nos exemplos de forma que se assemelha a uma distrubuição de Poisson:
 ![image](https://github.com/Karl-Marcos/ML-2022-DIMP/blob/main/imagens/histograma_fermi.png)
 
-Com os dados em mãos, precisávamos selecionar quais eram mais uteis para nossos *targets* numéricos, que são a energia de fermi¹ e energia por átomo. Para isso calculamos quão relacionados estavam cada uma das *features* dos dados (tínhamos aproximadamente 800 delas) com as informações que queríamos (nosso *target*). Relacionamos eles usando o coeficiente de correlação de Pearson.
+Com os dados em mãos, precisávamos selecionar quais eram mais úteis para nossos *targets* numéricos, que são a energia de fermi¹ e energia por átomo. Para isso calculamos quão relacionados estavam cada uma das *features* dos dados (tínhamos aproximadamente 800 delas) com as informações que queríamos (nosso *target*). Relacionamos eles usando o coeficiente de correlação de Pearson.
 
 Conseguimos juntar essa informação na tabela abaixo, nela podemos observar que as fatures que mais se relacionam com a energia de fermi estão próximos de 1 ou –1 (caso exista uma relação de proporção inversa).
 
@@ -40,12 +36,7 @@ Atributos para calcular a energia por átomo:
 
 Para o **Aprendizado supervisionado** utilizamos as seguintes bibliotecas: 
 ```python
-import pandas as pd
-import matplotlib.pyplot as plt
-plt.style.use('seaborn-bright')
-import numpy as np
-import lmfit
-import sklearn #somente algumas funções 
+pandas, matplotlib.pyplot, plt.style.use('seaborn-bright'), numpy, lmfit, sklearn 
 ```
 Vamos calcular métricas de Machine Learnig, testaremos modelos:
 - `Baseline`; 
@@ -68,16 +59,17 @@ Vemos que, para ambos os atributos, o melhor modelo foi o de floresta aleatória
 Para o **Aprendizado não supervisionado** utilizamos as seguintes bibliotecas: 
 
 ```python 
-import seaborn as sns
-import pandas as pd
-from sklearn.model_selection import train_test_split
-import numpy as np
-import seaborn as sns
-import pandas as pd
-from sklearn.preprocessing import StandardScaler
-from sklearn.decomposition import PCA
-import matplotlib.pyplot as plt
-from mpl_toolkits import mplot3d
+ seaborn, pandas, sklearn, numpy, seaborn, pandas, sklearn.preprocessing, matplotlib.pyplot, mpl_toolkits
 ```
-Vamos primeiramente reduzir a dimensionalidade da nossa matriz, para poder aplicar o PCA (Análise do componente principal), assim feito, escolhemos as 10 primeiras `features` para treinar o nosso modelo supervisionado. Por último, temos que, para os nossos dados, o melhor algoritimo para a detecção de outliers foi o `LOF`.
+Vamos primeiramente reduzir a dimensionalidade da nossa matriz, para poder aplicar o PCA (Análise do componente principal), assim feito, escolhemos as 10 primeiras `features` para treinar o nosso modelo não supervisionado. Em outro ponto, fizemos a clusterização por `K-means` e `hierarquização`, que comparando concluímos que a hierarquização separou melhor os dados e conseguimos detectar mais clusters. Como podemos ver na imagem abaixo, na qual o primeiro gráfico separamos com 3 clusters e o segundo separa em 30.
+
+![image](https://user-images.githubusercontent.com/106709309/199312913-fa075109-4980-4111-b58d-dde7c18cd0b0.png)
+
+Por último, para os nossos dados, fizemos a detecção de outliers e o melhor algoritimo foi o `LOF`, que considerando os 30 vizinhos mais próximos nos deu o seguinte gráfico, sendo que em uma quantidade menor de vizinhos não houve alterações (visualmente) no resultado final. 
+
+![image](https://user-images.githubusercontent.com/106709309/199312267-0a05a411-54c4-4246-9d1e-33f318a5fa1f.png)
+
+---
+
+Trabalho cooperativo feito por Danielle Chagas, Isadora Marcondes Lopes, Marcos de Cerqueira Leite e Paola Ferrari. 
 
