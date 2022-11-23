@@ -3,6 +3,12 @@ Trabalho Aprendizado de Máquina.
 
 Esse repositório apresenta ferramentas úteis para o compreendimento de dados a respeito de *flakes* de óxido de grafeno. Grafeno é uma estrutura composta apenas por carbono, é uma monocamada de grafite. Seu óxido, portanto, é essa mesma estrutura, porém com defeitos de oxigênio e hidrogênio.
 
+Um breve guia de onde encontrar as informações citadas no readme. Nossos códigos foram separados em blocos da seguinte maneira:
+- Bloco 1: correlação entre as *features* e os *targets*, matriz de correlação, histograma de ambos *targets*.
+- Bloco 2: modelo baseline, modelo Knn, modelo linear (normalizado e não normalizado), árvore de decisão, floresta aleatória, gráfico de importância.
+- Bloco 3: principal Component Analysis (PCA), matriz de loadings, variância, modelos citados no bloco 2 com PCA, gráfico de importância com dados de PCA, clusterização K-means, cluster por hierarquização. 
+- Bloco 4: validação cruzada k-fold, Pipelines.
+
 Utilizamos as seguintes bibliotecas para a **obtenção e análise de dados**
 ```python
 pandas, lmfit, matplotlib.pyplot, seaborn, numpy 
@@ -68,6 +74,9 @@ Vamos primeiramente reduzir a dimensionalidade da nossa matriz, para poder aplic
 Por último, para os nossos dados, fizemos a detecção de outliers e o melhor algoritimo foi o `LOF`, que considerando os 30 vizinhos mais próximos nos deu o seguinte gráfico, sendo que em uma quantidade menor de vizinhos não houve alterações (visualmente) no resultado final. 
 
 ![image](https://user-images.githubusercontent.com/106709309/199312267-0a05a411-54c4-4246-9d1e-33f318a5fa1f.png)
+
+## Validação Cruzada
+A validação cruzada foi usada para eliminar erros de sobreajustes que podem ser causados pela semente aleatória, ela garante também que os dados estejam homogêneos. Os resultados que tivemos para os modelos testados depois da validação cruzada são consistentes com os obtidos anteriormente: as melhores predições foram feitas pela floresta aleatória e árvore de decisão, nesta ordem, e o `target` que melhor foi previsto foi o de energia por átomo.
 
 ---
 
